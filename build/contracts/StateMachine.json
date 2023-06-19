@@ -1,0 +1,1406 @@
+{
+  "contractName": "StateMachine",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "lastModifiedTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "stage",
+      "outputs": [
+        {
+          "internalType": "enum StateMachine.Stages",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "probeStage",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum StateMachine.Stages",
+          "name": "_stage",
+          "type": "uint8"
+        }
+      ],
+      "name": "godModeSetStage",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"enum StateMachine.Stages\",\"name\":\"_stage\",\"type\":\"uint8\"}],\"name\":\"godModeSetStage\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastModifiedTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"probeStage\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stage\",\"outputs\":[{\"internalType\":\"enum StateMachine.Stages\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"probeStage()\":{\"notice\":\"Used to check for state update.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/StateMachine.sol\":\"StateMachine\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"project:/contracts/StateMachine.sol\":{\"keccak256\":\"0xab83cb5205676e681971abd4283c9ea8e069e0a9236d17631b88e13530e4ab2f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d28aa8ca368c449ef6554bda25f1502fe6f07fe2cec912065c495d9f9cc24ab3\",\"dweb:/ipfs/QmS1dn6Y6sS5H5zqEk2sKdgnHS3RVN9JUaCVmcpQmhws8V\"]},\"project:/node_modules/@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]}},\"version\":1}",
+  "bytecode": "0x6080806040523461006f576000543360018060a01b0382167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0600080a3426001556001600160a81b0319163360ff60a01b191617600160a21b1760ff60a81b19166000556103dd90816100758239f35b600080fdfe608060405260048036101561001357600080fd5b600090813560e01c80634f80028b146102e9578063715018a61461028f5780637a05a11e146101bf5780638da5cb5b14610198578063a5a3ff931461017a578063c040e6b8146101365763f2fde38b1461006c57600080fd5b34610132576020366003190112610132576001600160a01b038135818116929083900361012e5761009b61034f565b82156100db575082546001600160a01b0319811683178455167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e08380a380f35b60849060206040519162461bcd60e51b8352820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b6064820152fd5b8380fd5b5080fd5b50903461017757806003193601126101775760ff815460a81c16604051918382101561016457602083838152f35b634e487b7160e01b815260218452602490fd5b80fd5b82346101775780600319360112610177576020600154604051908152f35b8234610177578060031936011261017757546040516001600160a01b039091168152602090f35b503461013257816003193601126101325760015461012c810180911161027c574210156101ea575080f35b9042600155805460ff8160a81c16908382101561026957600182018092116102565760a01c60ff169081156102435706828110156102305761022d919250610311565b80f35b506021602492634e487b7160e01b835252fd5b634e487b7160e01b835260128452602483fd5b634e487b7160e01b835260118452602483fd5b634e487b7160e01b835260218452602483fd5b634e487b7160e01b835260118252602483fd5b82346101775780600319360112610177576102a861034f565b80546001600160a01b03198116825581906001600160a01b03167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e08280a380f35b5034610132576020366003190112610132578035908110156101325761022d9061031161034f565b6004811015610339576000805460ff60a81b191660a89290921b60ff60a81b16919091179055565b634e487b7160e01b600052602160045260246000fd5b6000546001600160a01b0316330361036357565b606460405162461bcd60e51b815260206004820152602060248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152fdfea26469706673582212204885f46c8a3fb062ede3941623492b25ad96c75ea94939fe64f928079a53802b64736f6c63430008130033",
+  "deployedBytecode": "0x608060405260048036101561001357600080fd5b600090813560e01c80634f80028b146102e9578063715018a61461028f5780637a05a11e146101bf5780638da5cb5b14610198578063a5a3ff931461017a578063c040e6b8146101365763f2fde38b1461006c57600080fd5b34610132576020366003190112610132576001600160a01b038135818116929083900361012e5761009b61034f565b82156100db575082546001600160a01b0319811683178455167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e08380a380f35b60849060206040519162461bcd60e51b8352820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b6064820152fd5b8380fd5b5080fd5b50903461017757806003193601126101775760ff815460a81c16604051918382101561016457602083838152f35b634e487b7160e01b815260218452602490fd5b80fd5b82346101775780600319360112610177576020600154604051908152f35b8234610177578060031936011261017757546040516001600160a01b039091168152602090f35b503461013257816003193601126101325760015461012c810180911161027c574210156101ea575080f35b9042600155805460ff8160a81c16908382101561026957600182018092116102565760a01c60ff169081156102435706828110156102305761022d919250610311565b80f35b506021602492634e487b7160e01b835252fd5b634e487b7160e01b835260128452602483fd5b634e487b7160e01b835260118452602483fd5b634e487b7160e01b835260218452602483fd5b634e487b7160e01b835260118252602483fd5b82346101775780600319360112610177576102a861034f565b80546001600160a01b03198116825581906001600160a01b03167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e08280a380f35b5034610132576020366003190112610132578035908110156101325761022d9061031161034f565b6004811015610339576000805460ff60a81b191660a89290921b60ff60a81b16919091179055565b634e487b7160e01b600052602160045260246000fd5b6000546001600160a01b0316330361036357565b606460405162461bcd60e51b815260206004820152602060248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152fdfea26469706673582212204885f46c8a3fb062ede3941623492b25ad96c75ea94939fe64f928079a53802b64736f6c63430008130033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "128:1512:3:-:0;;;;;;;2525:6:6;128:1512:3;719:10:10;128:1512:3;;;;;;;2573:40:6;2525:6;2573:40;;657:15:3;128:1512;;-1:-1:-1;;;;;;128:1512:3;719:10:10;-1:-1:-1;;;;128:1512:3;;-1:-1:-1;;;128:1512:3;-1:-1:-1;;;;128:1512:3;2525:6:6;128:1512:3;;;;;;;;;;;",
+  "deployedSourceMap": "128:1512:3:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;128:1512:3;;;;-1:-1:-1;;;;;128:1512:3;;;;;;;;;;;;1063:62:6;;:::i;:::-;2169:22;;128:1512:3;;-1:-1:-1;128:1512:3;;-1:-1:-1;;;;;;128:1512:3;;;;;;;2573:40:6;128:1512:3;;2573:40:6;128:1512:3;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;128:1512:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;128:1512:3;;;;;;;;;;;;;;;;;;;;;;;;;576:31;128:1512;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;128:1512:3;;;;;;;;;;;;;;;;;;;;;1376:16;128:1512;1395:9;128:1512;;;;;;;1357:15;:47;;1353:64;;128:1512;;;1353:64;1357:15;;1376:16;128:1512;;;;;;;;;;;;;;;1376:16;128:1512;;;;;;;;;;;;;;;;;;;;;;;1062:46;;;;;:::i;:::-;128:1512;;;;;;;;;;;;;;;-1:-1:-1;;;128:1512:3;;;;;;;;;-1:-1:-1;;;128:1512:3;;;;;;;;;-1:-1:-1;;;128:1512:3;;;;;;;;;-1:-1:-1;;;128:1512:3;;;;;;;;;;;;;;;;;;;;;1063:62:6;;:::i;:::-;128:1512:3;;-1:-1:-1;;;;;;128:1512:3;;;;;;-1:-1:-1;;;;;128:1512:3;2573:40:6;128:1512:3;;2573:40:6;128:1512:3;;;;;;;;;-1:-1:-1;;128:1512:3;;;;;;;;;;;;498:14;1063:62:6;;;:::i;:::-;128:1512:3;;;;;;;;;-1:-1:-1;;;;128:1512:3;;;;;;-1:-1:-1;;;128:1512:3;;;;;;;:::o;:::-;;;;;;;;;;;;1359:130:6;1273:6;128:1512:3;-1:-1:-1;;;;;128:1512:3;719:10:10;1422:23:6;128:1512:3;;1359:130:6:o;128:1512:3:-;;;;;;;;;;;;;;;;;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.13;\n\nimport \"../node_modules/@openzeppelin/contracts/access/Ownable.sol\";\n\ncontract StateMachine is Ownable {\n    enum Stages {\n        DEPOSIT_WITHDRAW,\n        ACCEPTING_OFFERS,\n        ACCEPTING_BIDS,\n        MATCHING\n    }\n\n    /**\n     * @notice  Used to check for state update.\n     */\n    function probeStage() public timedTransitions {}\n\n    function godModeSetStage(Stages _stage) public onlyOwner {\n        // used for testing\n        stage = _stage;\n    }\n\n    uint8 num_stages = 4;\n    Stages public stage;\n    uint256 public lastModifiedTime;\n\n    constructor() {\n        lastModifiedTime = block.timestamp;\n        // set current state\n        stage = Stages.DEPOSIT_WITHDRAW;\n    }\n\n    modifier atStage(Stages _stage) {\n        require(\n            stage == _stage,\n            \"This operation is not allowed to be performed at this stage\"\n        );\n        _;\n    }\n\n    function nextStage() private {\n        // update last modified time\n        lastModifiedTime = block.timestamp;\n        stage = Stages((uint(stage) + 1) % num_stages); // 4 stages totaly, will continue rotating\n    }\n\n    // Perform timed transitions. Be sure to mention\n    // this modifier first, otherwise the guards\n    // will not take the new stage into account.\n    modifier timedTransitions() {\n        if (block.timestamp >= lastModifiedTime + 5 minutes) nextStage();\n        _;\n    }\n\n    // This modifier goes to the next stage\n    // after the function is done.\n    // In Dutch auction, used after matching is done\n    modifier transitionNext() {\n        _;\n        nextStage();\n    }\n}\n",
+  "sourcePath": "/Users/adamma/Desktop/COMP6451/dutch_extension/contracts/StateMachine.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/StateMachine.sol",
+    "exportedSymbols": {
+      "Context": [
+        2868
+      ],
+      "Ownable": [
+        2156
+      ],
+      "StateMachine": [
+        2003
+      ]
+    },
+    "id": 2004,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1894,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".13"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:3"
+      },
+      {
+        "absolutePath": "project:/node_modules/@openzeppelin/contracts/access/Ownable.sol",
+        "file": "../node_modules/@openzeppelin/contracts/access/Ownable.sol",
+        "id": 1895,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2004,
+        "sourceUnit": 2157,
+        "src": "58:68:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1896,
+              "name": "Ownable",
+              "nameLocations": [
+                "153:7:3"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2156,
+              "src": "153:7:3"
+            },
+            "id": 1897,
+            "nodeType": "InheritanceSpecifier",
+            "src": "153:7:3"
+          }
+        ],
+        "canonicalName": "StateMachine",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2003,
+        "linearizedBaseContracts": [
+          2003,
+          2156,
+          2868
+        ],
+        "name": "StateMachine",
+        "nameLocation": "137:12:3",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "StateMachine.Stages",
+            "id": 1902,
+            "members": [
+              {
+                "id": 1898,
+                "name": "DEPOSIT_WITHDRAW",
+                "nameLocation": "189:16:3",
+                "nodeType": "EnumValue",
+                "src": "189:16:3"
+              },
+              {
+                "id": 1899,
+                "name": "ACCEPTING_OFFERS",
+                "nameLocation": "215:16:3",
+                "nodeType": "EnumValue",
+                "src": "215:16:3"
+              },
+              {
+                "id": 1900,
+                "name": "ACCEPTING_BIDS",
+                "nameLocation": "241:14:3",
+                "nodeType": "EnumValue",
+                "src": "241:14:3"
+              },
+              {
+                "id": 1901,
+                "name": "MATCHING",
+                "nameLocation": "265:8:3",
+                "nodeType": "EnumValue",
+                "src": "265:8:3"
+              }
+            ],
+            "name": "Stages",
+            "nameLocation": "172:6:3",
+            "nodeType": "EnumDefinition",
+            "src": "167:112:3"
+          },
+          {
+            "body": {
+              "id": 1908,
+              "nodeType": "Block",
+              "src": "395:2:3",
+              "statements": []
+            },
+            "documentation": {
+              "id": 1903,
+              "nodeType": "StructuredDocumentation",
+              "src": "285:59:3",
+              "text": " @notice  Used to check for state update."
+            },
+            "functionSelector": "7a05a11e",
+            "id": 1909,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 1906,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1905,
+                  "name": "timedTransitions",
+                  "nameLocations": [
+                    "378:16:3"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1995,
+                  "src": "378:16:3"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "378:16:3"
+              }
+            ],
+            "name": "probeStage",
+            "nameLocation": "358:10:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1904,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "368:2:3"
+            },
+            "returnParameters": {
+              "id": 1907,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "395:0:3"
+            },
+            "scope": 2003,
+            "src": "349:48:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1921,
+              "nodeType": "Block",
+              "src": "460:59:3",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 1919,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 1917,
+                      "name": "stage",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1928,
+                      "src": "498:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Stages_$1902",
+                        "typeString": "enum StateMachine.Stages"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 1918,
+                      "name": "_stage",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1912,
+                      "src": "506:6:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Stages_$1902",
+                        "typeString": "enum StateMachine.Stages"
+                      }
+                    },
+                    "src": "498:14:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Stages_$1902",
+                      "typeString": "enum StateMachine.Stages"
+                    }
+                  },
+                  "id": 1920,
+                  "nodeType": "ExpressionStatement",
+                  "src": "498:14:3"
+                }
+              ]
+            },
+            "functionSelector": "4f80028b",
+            "id": 1922,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 1915,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1914,
+                  "name": "onlyOwner",
+                  "nameLocations": [
+                    "450:9:3"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2075,
+                  "src": "450:9:3"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "450:9:3"
+              }
+            ],
+            "name": "godModeSetStage",
+            "nameLocation": "412:15:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1913,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1912,
+                  "mutability": "mutable",
+                  "name": "_stage",
+                  "nameLocation": "435:6:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1922,
+                  "src": "428:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Stages_$1902",
+                    "typeString": "enum StateMachine.Stages"
+                  },
+                  "typeName": {
+                    "id": 1911,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1910,
+                      "name": "Stages",
+                      "nameLocations": [
+                        "428:6:3"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1902,
+                      "src": "428:6:3"
+                    },
+                    "referencedDeclaration": 1902,
+                    "src": "428:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Stages_$1902",
+                      "typeString": "enum StateMachine.Stages"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "427:15:3"
+            },
+            "returnParameters": {
+              "id": 1916,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "460:0:3"
+            },
+            "scope": 2003,
+            "src": "403:116:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 1925,
+            "mutability": "mutable",
+            "name": "num_stages",
+            "nameLocation": "531:10:3",
+            "nodeType": "VariableDeclaration",
+            "scope": 2003,
+            "src": "525:20:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 1923,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "525:5:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "hexValue": "34",
+              "id": 1924,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "544:1:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_4_by_1",
+                "typeString": "int_const 4"
+              },
+              "value": "4"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "functionSelector": "c040e6b8",
+            "id": 1928,
+            "mutability": "mutable",
+            "name": "stage",
+            "nameLocation": "565:5:3",
+            "nodeType": "VariableDeclaration",
+            "scope": 2003,
+            "src": "551:19:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_Stages_$1902",
+              "typeString": "enum StateMachine.Stages"
+            },
+            "typeName": {
+              "id": 1927,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 1926,
+                "name": "Stages",
+                "nameLocations": [
+                  "551:6:3"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 1902,
+                "src": "551:6:3"
+              },
+              "referencedDeclaration": 1902,
+              "src": "551:6:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_Stages_$1902",
+                "typeString": "enum StateMachine.Stages"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "a5a3ff93",
+            "id": 1930,
+            "mutability": "mutable",
+            "name": "lastModifiedTime",
+            "nameLocation": "591:16:3",
+            "nodeType": "VariableDeclaration",
+            "scope": 2003,
+            "src": "576:31:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1929,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "576:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1943,
+              "nodeType": "Block",
+              "src": "628:121:3",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 1936,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 1933,
+                      "name": "lastModifiedTime",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1930,
+                      "src": "638:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 1934,
+                        "name": "block",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967292,
+                        "src": "657:5:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_block",
+                          "typeString": "block"
+                        }
+                      },
+                      "id": 1935,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "663:9:3",
+                      "memberName": "timestamp",
+                      "nodeType": "MemberAccess",
+                      "src": "657:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "638:34:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 1937,
+                  "nodeType": "ExpressionStatement",
+                  "src": "638:34:3"
+                },
+                {
+                  "expression": {
+                    "id": 1941,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 1938,
+                      "name": "stage",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1928,
+                      "src": "711:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Stages_$1902",
+                        "typeString": "enum StateMachine.Stages"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 1939,
+                        "name": "Stages",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1902,
+                        "src": "719:6:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_Stages_$1902_$",
+                          "typeString": "type(enum StateMachine.Stages)"
+                        }
+                      },
+                      "id": 1940,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberLocation": "726:16:3",
+                      "memberName": "DEPOSIT_WITHDRAW",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1898,
+                      "src": "719:23:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Stages_$1902",
+                        "typeString": "enum StateMachine.Stages"
+                      }
+                    },
+                    "src": "711:31:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Stages_$1902",
+                      "typeString": "enum StateMachine.Stages"
+                    }
+                  },
+                  "id": 1942,
+                  "nodeType": "ExpressionStatement",
+                  "src": "711:31:3"
+                }
+              ]
+            },
+            "id": 1944,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1931,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "625:2:3"
+            },
+            "returnParameters": {
+              "id": 1932,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "628:0:3"
+            },
+            "scope": 2003,
+            "src": "614:135:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1957,
+              "nodeType": "Block",
+              "src": "787:149:3",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_Stages_$1902",
+                          "typeString": "enum StateMachine.Stages"
+                        },
+                        "id": 1952,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 1950,
+                          "name": "stage",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1928,
+                          "src": "818:5:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_Stages_$1902",
+                            "typeString": "enum StateMachine.Stages"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "id": 1951,
+                          "name": "_stage",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1947,
+                          "src": "827:6:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_Stages_$1902",
+                            "typeString": "enum StateMachine.Stages"
+                          }
+                        },
+                        "src": "818:15:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "54686973206f7065726174696f6e206973206e6f7420616c6c6f77656420746f20626520706572666f726d65642061742074686973207374616765",
+                        "id": 1953,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "847:61:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_83f9c42daaf68c10132240e3686edd0be851ce0a057ea8557bf3f2c5737a20b7",
+                          "typeString": "literal_string \"This operation is not allowed to be performed at this stage\""
+                        },
+                        "value": "This operation is not allowed to be performed at this stage"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_83f9c42daaf68c10132240e3686edd0be851ce0a057ea8557bf3f2c5737a20b7",
+                          "typeString": "literal_string \"This operation is not allowed to be performed at this stage\""
+                        }
+                      ],
+                      "id": 1949,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "797:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1954,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "797:121:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1955,
+                  "nodeType": "ExpressionStatement",
+                  "src": "797:121:3"
+                },
+                {
+                  "id": 1956,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "928:1:3"
+                }
+              ]
+            },
+            "id": 1958,
+            "name": "atStage",
+            "nameLocation": "764:7:3",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1948,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1947,
+                  "mutability": "mutable",
+                  "name": "_stage",
+                  "nameLocation": "779:6:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1958,
+                  "src": "772:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Stages_$1902",
+                    "typeString": "enum StateMachine.Stages"
+                  },
+                  "typeName": {
+                    "id": 1946,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1945,
+                      "name": "Stages",
+                      "nameLocations": [
+                        "772:6:3"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1902,
+                      "src": "772:6:3"
+                    },
+                    "referencedDeclaration": 1902,
+                    "src": "772:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Stages_$1902",
+                      "typeString": "enum StateMachine.Stages"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "771:15:3"
+            },
+            "src": "755:181:3",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1980,
+              "nodeType": "Block",
+              "src": "971:187:3",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 1964,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 1961,
+                      "name": "lastModifiedTime",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1930,
+                      "src": "1018:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 1962,
+                        "name": "block",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967292,
+                        "src": "1037:5:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_block",
+                          "typeString": "block"
+                        }
+                      },
+                      "id": 1963,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "1043:9:3",
+                      "memberName": "timestamp",
+                      "nodeType": "MemberAccess",
+                      "src": "1037:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1018:34:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 1965,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1018:34:3"
+                },
+                {
+                  "expression": {
+                    "id": 1978,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 1966,
+                      "name": "stage",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1928,
+                      "src": "1062:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Stages_$1902",
+                        "typeString": "enum StateMachine.Stages"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 1976,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "components": [
+                              {
+                                "commonType": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                "id": 1973,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftExpression": {
+                                  "arguments": [
+                                    {
+                                      "id": 1970,
+                                      "name": "stage",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 1928,
+                                      "src": "1083:5:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_Stages_$1902",
+                                        "typeString": "enum StateMachine.Stages"
+                                      }
+                                    }
+                                  ],
+                                  "expression": {
+                                    "argumentTypes": [
+                                      {
+                                        "typeIdentifier": "t_enum$_Stages_$1902",
+                                        "typeString": "enum StateMachine.Stages"
+                                      }
+                                    ],
+                                    "id": 1969,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": true,
+                                    "lValueRequested": false,
+                                    "nodeType": "ElementaryTypeNameExpression",
+                                    "src": "1078:4:3",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_type$_t_uint256_$",
+                                      "typeString": "type(uint256)"
+                                    },
+                                    "typeName": {
+                                      "id": 1968,
+                                      "name": "uint",
+                                      "nodeType": "ElementaryTypeName",
+                                      "src": "1078:4:3",
+                                      "typeDescriptions": {}
+                                    }
+                                  },
+                                  "id": 1971,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "kind": "typeConversion",
+                                  "lValueRequested": false,
+                                  "nameLocations": [],
+                                  "names": [],
+                                  "nodeType": "FunctionCall",
+                                  "src": "1078:11:3",
+                                  "tryCall": false,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "nodeType": "BinaryOperation",
+                                "operator": "+",
+                                "rightExpression": {
+                                  "hexValue": "31",
+                                  "id": 1972,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "number",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "1092:1:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_rational_1_by_1",
+                                    "typeString": "int_const 1"
+                                  },
+                                  "value": "1"
+                                },
+                                "src": "1078:15:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              }
+                            ],
+                            "id": 1974,
+                            "isConstant": false,
+                            "isInlineArray": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "TupleExpression",
+                            "src": "1077:17:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "%",
+                          "rightExpression": {
+                            "id": 1975,
+                            "name": "num_stages",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1925,
+                            "src": "1097:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "src": "1077:30:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 1967,
+                        "name": "Stages",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1902,
+                        "src": "1070:6:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_Stages_$1902_$",
+                          "typeString": "type(enum StateMachine.Stages)"
+                        }
+                      },
+                      "id": 1977,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1070:38:3",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Stages_$1902",
+                        "typeString": "enum StateMachine.Stages"
+                      }
+                    },
+                    "src": "1062:46:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Stages_$1902",
+                      "typeString": "enum StateMachine.Stages"
+                    }
+                  },
+                  "id": 1979,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1062:46:3"
+                }
+              ]
+            },
+            "id": 1981,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "nextStage",
+            "nameLocation": "951:9:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1959,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "960:2:3"
+            },
+            "returnParameters": {
+              "id": 1960,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "971:0:3"
+            },
+            "scope": 2003,
+            "src": "942:216:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 1994,
+              "nodeType": "Block",
+              "src": "1343:92:3",
+              "statements": [
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 1988,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "expression": {
+                        "id": 1983,
+                        "name": "block",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967292,
+                        "src": "1357:5:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_block",
+                          "typeString": "block"
+                        }
+                      },
+                      "id": 1984,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "1363:9:3",
+                      "memberName": "timestamp",
+                      "nodeType": "MemberAccess",
+                      "src": "1357:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": ">=",
+                    "rightExpression": {
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 1987,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "id": 1985,
+                        "name": "lastModifiedTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1930,
+                        "src": "1376:16:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "+",
+                      "rightExpression": {
+                        "hexValue": "35",
+                        "id": 1986,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1395:9:3",
+                        "subdenomination": "minutes",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_300_by_1",
+                          "typeString": "int_const 300"
+                        },
+                        "value": "5"
+                      },
+                      "src": "1376:28:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1357:47:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1992,
+                  "nodeType": "IfStatement",
+                  "src": "1353:64:3",
+                  "trueBody": {
+                    "expression": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 1989,
+                        "name": "nextStage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1981,
+                        "src": "1406:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                          "typeString": "function ()"
+                        }
+                      },
+                      "id": 1990,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1406:11:3",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+                    "id": 1991,
+                    "nodeType": "ExpressionStatement",
+                    "src": "1406:11:3"
+                  }
+                },
+                {
+                  "id": 1993,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1427:1:3"
+                }
+              ]
+            },
+            "id": 1995,
+            "name": "timedTransitions",
+            "nameLocation": "1324:16:3",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1982,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1340:2:3"
+            },
+            "src": "1315:120:3",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2001,
+              "nodeType": "Block",
+              "src": "1599:39:3",
+              "statements": [
+                {
+                  "id": 1997,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1609:1:3"
+                },
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 1998,
+                      "name": "nextStage",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1981,
+                      "src": "1620:9:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 1999,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1620:11:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2000,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1620:11:3"
+                }
+              ]
+            },
+            "id": 2002,
+            "name": "transitionNext",
+            "nameLocation": "1582:14:3",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1996,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1596:2:3"
+            },
+            "src": "1573:65:3",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2004,
+        "src": "128:1512:3",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:1609:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.19+commit.7dd6d404.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2023-04-07T12:15:28.852Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "probeStage()": {
+        "notice": "Used to check for state update."
+      }
+    },
+    "version": 1
+  }
+}
